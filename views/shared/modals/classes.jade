@@ -1,0 +1,41 @@
+div(modal='user.stats.lvl >= 5 && !user.stats.class')
+  .modal-header
+    h3 Class System Unlocked
+  .modal-body
+    | You've unlocked the Class System! Choose among the following (you can re-roll later):
+    .row-fluid
+      .span3(ng-click='selectedClass = "warrior"', ng-class='{selectableInventory: selectedClass=="warrior"}')
+        h5 Warrior
+        figure.herobox
+          .character-sprites
+            span(class='{{user.preferences.gender}}_skin_{{user.preferences.skin}}')
+            span(class='{{user.preferences.gender}}_hair_{{user.preferences.hair}}')
+            span(class='{{user.preferences.gender}}_armor_5-warrior')
+            span(class='{{user.preferences.gender}}_head_5-warrior')
+      .span3(ng-click='selectedClass = "wizard"', ng-class='{selectableInventory: selectedClass=="wizard"}')
+        h5 Wizard
+        figure.herobox
+          .character-sprites
+            span(class='{{user.preferences.gender}}_skin_{{user.preferences.skin}}')
+            span(class='{{user.preferences.gender}}_hair_{{user.preferences.hair}}')
+            span(class='{{user.preferences.gender}}_armor_5-wizard')
+            span(class='{{user.preferences.gender}}_head_5-wizard')
+      .span3(ng-click='selectedClass = "rogue"', ng-class='{selectableInventory: selectedClass=="rogue"}')
+        h5 Rogue
+        figure.herobox
+          .character-sprites
+            span(class='{{user.preferences.gender}}_skin_{{user.preferences.skin}}')
+            span(class='{{user.preferences.gender}}_hair_{{user.preferences.hair}}')
+            span(class='{{user.preferences.gender}}_armor_5-rogue')
+            span(class='{{user.preferences.gender}}_head_5-rogue')
+      .span3(ng-click='selectedClass = "healer"', ng-class='{selectableInventory: selectedClass=="healer"}')
+        h5 Healer
+        figure.herobox
+          .character-sprites
+            span(class='{{user.preferences.gender}}_skin_{{user.preferences.skin}}')
+            span(class='{{user.preferences.gender}}_hair_{{user.preferences.hair}}')
+            span(class='{{user.preferences.gender}}_armor_5-healer')
+            span(class='{{user.preferences.gender}}_head_5-healer')
+
+  .modal-footer
+    button.btn.btn-default.cancel(ng-click='set("stats.class", selectedClass)') Select

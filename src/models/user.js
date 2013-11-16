@@ -204,7 +204,15 @@ var UserSchema = new Schema({
     hp: Number,
     exp: Number,
     gp: Number,
-    lvl: Number
+    lvl: Number,
+    'class': String,
+    spec: {
+      str: Number,
+      def: Number,
+      int: Number,
+      wis: Number,
+      agi: Number
+    }
   },
   tags: [
     {
